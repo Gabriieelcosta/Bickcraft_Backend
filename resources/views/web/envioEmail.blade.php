@@ -8,25 +8,25 @@
 </head>
 <body>
   <h1>Mensagem</h1>
-  <p>Esta é a primeira mensagem enviada.</p>
+  <p>Mensagem recebida!</p>
 
   {{-- Auxilio do chatgpt --}}
 
-  <p><strong>Nome: </strong>{{ isset($data['name']) ? $data['name'] : '' }}</p>
+  {{-- <p><strong>Nome: </strong>{{ isset($data['name']) ? $data['name'] : '' }}</p>
 
   <p><strong>Telefone: </strong>{{ isset($data['telefone']) ? $data['telefone'] : '' }}</p>
 
   <p><strong>Email: </strong>{{ isset($data['email']) ? $data['email'] : '' }}</p>
 
-  <p><strong>Mensagem: </strong>{{ isset($data['mensagem']) ? $data['mensagem'] : '' }}</p>
+  <p><strong>Mensagem: </strong>{{ isset($data['mensagem']) ? $data['mensagem'] : '' }}</p> --}}
 
 
   {{-- Porque esse código não rodou? --}}
 
   
-  {{-- <p><strong>Nome </strong>{{ $data['name']}}</p>
-  <p><strong>Telefone </strong>{{ $data['telefone']}}</p>
-  <p><strong>Email </strong>{{ $data['email']}}</p>
-  <p><strong>Mensagem </strong>{{ $data['mensagem']}}</p> --}}
+  <p><strong>Nome: </strong>{{ $data['name']}}</p>
+  <p><strong>Telefone: </strong>{{ $data['telefone']}}</p>
+  <p><strong>Email: </strong>{{ $data['email']}}</p>
+  <p><strong>Mensagem: </strong>{{ $data['mensagem']}}</p>
 </body>
 </html>

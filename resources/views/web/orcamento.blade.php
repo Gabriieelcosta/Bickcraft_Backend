@@ -43,7 +43,8 @@
       </div>
     </div>
 
-    <form class="orcamento container" action="./enviar.php" method="post">
+    <form class="orcamento container" action="{{route('dados.salvo')}}" method="POST">
+      @csrf
       <div class="orcamento-produto">
         <h2 class="font-1-xs cor-5">Bikcraft ou Seguro?</h2>
 
@@ -108,48 +109,94 @@
         <h2 class="font-1-xs cor-9 col-2">dados pessoais</h2>
         <div>
           <label for="nome">Nome</label>
-          <input type="text" id="nome" name="nome">
+          <input type="text" id="nome" name="nome" value="{{old('name')}}">
+
+          @error('name')
+              <p><strong>{{$message}}</strong></p>
+          @enderror
         </div>
         <div>
           <label for="sobrenome">Sobrenome</label>
-          <input type="text" id="sobrenome" name="sobrenome">
+          <input type="text" id="sobrenome" name="sobrenome" value="{{old('sobrenome')}}">
+
+          @error('sobrenome')
+              <p><strong>{{$message}}</strong></p>
+          @enderror
         </div>
         <div class="col-2">
           <label for="cpf">CPF</label>
-          <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00">
+          <input type="text" id="cpf" name="cpf" placeholder="000.000.000-00" value="{{old('cpf')}}">
+
+          @error('cpf')
+              <p><strong>{{$message}}</strong></p>
+          @enderror
         </div>
         <div class="col-2">
           <label for="email">Email</label>
-          <input type="email" id="email" name="email" required>
+          <input type="email" id="email" name="email" value="{{old('email')}}" required>
+
+          @error('email')
+              <p><strong>{{$message}}</strong></p>
+          @enderror
         </div>
         <h2 class="font-1-xs cor-9 col-2">entrega</h2>
         <div>
           <label for="cep">CEP</label>
-          <input type="text" id="cep" name="cep">
+          <input type="text" id="cep" name="cep" value="{{old('cep')}}">
+
+          @error('cep')
+              <p><strong>{{$message}}</strong></p>
+          @enderror
         </div>
         <div>
           <label for="numero">Número</label>
-          <input type="text" id="numero" name="numero">
+          <input type="text" id="numero" name="numero" value="{{old('numero')}}">
+
+          @error('numero')
+              <p><strong>{{$message}}</strong></p>
+          @enderror
         </div>
         <div>
           <label for="logradouro">Logradouro</label>
-          <input type="text" id="logradouro" name="logradouro">
+          <input type="text" id="logradouro" name="logradouro" value="{{old('logradouro')}}">
+
+          @error('logradouro')
+              <p><strong>{{$message}}</strong></p>
+          @enderror
         </div>
         <div>
           <label for="bairro">Bairro</label>
-          <input type="text" id="bairro" name="bairro">
+          <input type="text" id="bairro" name="bairro" value="{{old('bairro')}}">
+
+          @error('bairro')
+              <p><strong>{{$message}}</strong></p>
+          @enderror
         </div>
         <div>
           <label for="cidade">Cidade</label>
-          <input type="text" id="cidade" name="cidade">
+          <input type="text" id="cidade" name="cidade" value="{{old('cidade')}}">
+
+          @error('cidade')
+              <p><strong>{{$message}}</strong></p>
+          @enderror
         </div>
         <div>
           <label for="estado">Estado</label>
-          <input type="text" id="estado" name="estado">
+          <input type="text" id="estado" name="estado" value="{{old('estado')}}">
+
+          @error('estado')
+              <p><strong>{{$message}}</strong></p>
+          @enderror
         </div>
-        <button class="botao col-2">Solicitar Orçamento</button>
+        <button class="botao col-2" type="submit">Solicitar Orçamento</button>
       </div>
     </form>
+    @if (session('info'))
+            
+            <script>
+              alert("{{session('info')}}");
+            </script>
+    @endif
   </main>
 
   <footer class="footer-bg">

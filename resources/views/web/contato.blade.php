@@ -72,8 +72,8 @@
         <form class="form" action="{{route('contato.envio')}}" method="POST">
           @csrf
           <div>
-            <label for="nome">Nome</label>
-            <input type="text" id="nome" name="nome" value="{{old('name')}}" placeholder="Seu nome">
+            <label for="name">Nome</label>
+            <input type="text" id="name" name="name" value="{{old('name')}}" placeholder="Seu nome" required>
           
               @error('name')
                   <p><strong>{{$message}}</strong></p>

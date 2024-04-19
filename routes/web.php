@@ -1,5 +1,6 @@
 <?php
 
+
 use App\Http\Controllers\NebulaController;
 use App\Http\Controllers\NimbusController;
 use App\Http\Controllers\MagicController;
@@ -27,13 +28,22 @@ use Illuminate\Support\Facades\Route;
 // });
 
 
-Route::get('/', [IndexController::class, "index"])->name('inicio');
-Route::get('/bicicletas', [BicicletasController::class, "produto"])->name('produto');
-Route::get('/seguros', [SegurosController::class, "seguros"])->name('seguro');
+Route::get('/', [IndexController::class, 'index'])->name('inicio');
+
+Route::get('/bicicletas', [BicicletasController::class, 'produto'])->name('produto');
+
+Route::get('/seguros', [SegurosController::class, 'seguros'])->name('seguro');
+
 Route::get('/contato', [ContatosController::class, 'contato'])->name('contato');
 Route::post('/contato', [ContatosController::class, 'envio'])->name('contato.envio');
-Route::get('/termos', [TermosController::class, "termo"])->name('termo');
-Route::get('/orçamentos', [OrçamentosController::class, "orçamento"])->name('orcamento');
-Route::get('/magic_might', [MagicController::class, "magic"])->name('magic');
-Route::get('/nimbus_stark', [NimbusController::class, "nimbus"])->name('nimbus');
-Route::get('/nebula_cosmic', [NebulaController::class, "nebula"])->name('nebula');
+
+Route::get('/termos', [TermosController::class, 'termo'])->name('termo');
+
+Route::get('/orçamentos', [OrçamentosController::class, 'orçamento'])->name('orcamento');
+Route::post('/orçamentos', [OrçamentosController::class, 'salvarDados'])->name('dados.salvo');
+
+Route::get('/magic_might', [MagicController::class, 'magic'])->name('magic');
+
+Route::get('/nimbus_stark', [NimbusController::class, 'nimbus'])->name('nimbus');
+
+Route::get('/nebula_cosmic', [NebulaController::class, 'nebula'])->name('nebula');
